@@ -1,0 +1,41 @@
+/* .login-form input{
+	display: block;
+	margin:0 auto 15px;
+	margin-top:16px;
+	width:70%;
+	background: #fefefe;
+	border:0;
+	color:#6c6c6c;
+	padding: 8px;
+	border-radius:2px;
+	border: 1px solid gray;
+}
+.login-form form p{
+	width:80%;
+	margin: 5px auto 10px;
+	text-align: center;
+} */
+.alert{
+	color: #e30202;
+    width: 100%;
+    margin-bottom: 0px;
+    padding: 0px;
+    padding-left: 59px;
+}
+.mat-card{
+    margin: 10px;
+    width: 100%;
+}
+.matInput{
+    width:550px
+}
+.form-field{
+    width: 80%; 
+    margin-left:40px;
+    margin-right: 10px;
+}
+.mat-card-title{
+    color: purple;
+    width: 100%;
+    text-align: center;
+}

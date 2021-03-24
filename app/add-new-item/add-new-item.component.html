@@ -1,0 +1,41 @@
+<mat-card style="max-width: 500px;" class="mat-card">
+    <mat-card-header style="text-align: center;">
+        <mat-card-title class="mat-card-title">Add New Item</mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="color: green;">{{message}}</mat-card-content>
+    <form [formGroup]="addItemForm" (ngSubmit)="onSubmit(addItemForm)">
+        <mat-card-content>
+            <mat-form-field class="form-field">
+                <input matInput matInput type="text" placeholder="Item name" formControlName="name" id="name">
+                <mat-hint align="end">Not more then 40 characters long.</mat-hint>
+                <mat-error
+                    *ngIf="addItemForm.controls['name'].invalid && (addItemForm.controls['name'].dirty || addItemForm.controls['name'].touched)">
+                    Name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-field">
+                <input matInput matInput type="textarea" placeholder="Description" formControlName="description" id="name">
+                <mat-hint align="end">Not more then 200 characters long.</mat-hint>
+                <mat-error
+                    *ngIf="addItemForm.controls['description'].invalid && (addItemForm.controls['description'].dirty || addItemForm.controls['description'].touched)">
+                    Description is required</mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-field">
+                <input matInput matInput type="number" placeholder="Price" formControlName="price" id="price">
+                <mat-hint align="end">Accepts only number</mat-hint>
+                <mat-error
+                    *ngIf="addItemForm.controls['price'].invalid && (addItemForm.controls['price'].dirty || addItemForm.controls['price'].touched)">
+                    Price is required</mat-error>
+            </mat-form-field>
+
+            <mat-card-actions align="center">
+                <button type="submit" mat-raised-button color="primary" [disabled]="addItemForm.invalid">Add
+                    Item</button>
+                <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+            </mat-card-actions>
+
+            
+        </mat-card-content>
+    </form>
+
+</mat-card>
