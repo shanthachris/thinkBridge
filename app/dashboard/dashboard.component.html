@@ -1,0 +1,26 @@
+<mat-accordion displayMode="flat" multi class="mat-table">
+    <section matSort class="mat-header-row">
+      <span class="mat-header-cell">Item ID</span>
+      <span class="mat-header-cell" >Name</span>
+      <span class="mat-header-cell">Description</span>
+      <span class="mat-header-cell" >Price</span>
+    </section>
+  
+    <mat-expansion-panel *ngFor="let item of crntList;let i=index">
+      <mat-expansion-panel-header class="mat-row">
+        <span class="mat-cell">{{item.id}}</span>
+        <span class="mat-cell">{{item.name}}</span>
+        <span class="mat-cell">{{item.description}}</span>
+        <span class="mat-cell">{{item.price}}</span>
+      </mat-expansion-panel-header>
+      <button mat-raised-button color="primary" (click)="editItem(i)" style="margin-right: 10px;">Modify</button>
+      <button mat-raised-button color="primary" (click)="deleteItem(i)">Delete</button>
+    </mat-expansion-panel>
+  
+  </mat-accordion>
+  <mat-paginator #paginator
+  [length]="this.totalRows"
+  [pageIndex]="0"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+></mat-paginator>
