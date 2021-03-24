@@ -1,0 +1,7 @@
+<nav mat-tab-nav-bar [backgroundColor]="background">
+  <a mat-tab-link *ngFor="let link of links"
+     (click)="highlightLink(link)"
+     [active]="activeLink == link"> {{link}} </a>
+</nav>
+<dashboard (modifyItem)="openEditItemForm($event)" *ngIf="activeLink == 'Dashboard'"></dashboard>
+<add-new-item *ngIf="activeLink == 'Add Item'" [type]="type" [itemID]="itemID"></add-new-item>
